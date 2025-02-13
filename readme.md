@@ -14,7 +14,7 @@ Clipboard History - это приложение для Windows Forms, котор
 1. Клонируйте репозиторий:
     
 ```
-    git clone https://github.com/yourusername/clipboard-history.git
+    git clone https://github.com/tim-ushakow/clipboard-history-app.git
     
 ```
 2. Откройте проект в Visual Studio 2022.
@@ -66,4 +66,4 @@ public class ClipboardList
 
 ## Авторы
 
-- [Ваше Имя](https://github.com/yourusername)
+- [Timofey Ushakov](https://github.com/tim-ushakow)
