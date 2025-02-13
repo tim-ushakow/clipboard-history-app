@@ -67,3 +67,7 @@ public class ClipboardList
 ## Авторы
 
 - [Timofey Ushakov](https://github.com/tim-ushakow)
+
+## Contirbutors
+
+- [Denis Abrosimov](https://github.com/abrosimov-d)
