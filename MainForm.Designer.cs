@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            ListViewItem listViewItem1 = new ListViewItem(new string[] { "test", "test" }, 0);
-            ListViewItem listViewItem2 = new ListViewItem("test", 1);
+            ListViewItem listViewItem3 = new ListViewItem(new string[] { "test", "test" }, 0);
+            ListViewItem listViewItem4 = new ListViewItem("test", 1);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             clipboardListView = new ListView();
             columnHeader1 = new ColumnHeader();
@@ -49,15 +49,17 @@
             // 
             // clipboardListView
             // 
+            clipboardListView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             clipboardListView.BackgroundImageTiled = true;
             clipboardListView.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2 });
             clipboardListView.ContextMenuStrip = contextMenu;
             clipboardListView.FullRowSelect = true;
-            clipboardListView.Items.AddRange(new ListViewItem[] { listViewItem1, listViewItem2 });
+            clipboardListView.Items.AddRange(new ListViewItem[] { listViewItem3, listViewItem4 });
             clipboardListView.LargeImageList = imageList1;
-            clipboardListView.Location = new Point(12, 47);
+            clipboardListView.Location = new Point(10, 35);
+            clipboardListView.Margin = new Padding(3, 2, 3, 2);
             clipboardListView.Name = "clipboardListView";
-            clipboardListView.Size = new Size(497, 636);
+            clipboardListView.Size = new Size(435, 478);
             clipboardListView.TabIndex = 0;
             clipboardListView.TileSize = new Size(470, 54);
             clipboardListView.UseCompatibleStateImageBehavior = false;
@@ -73,25 +75,25 @@
             contextMenu.ImageScalingSize = new Size(20, 20);
             contextMenu.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, toolStripMenuItem2, toolStripMenuItem3 });
             contextMenu.Name = "contextMenu";
-            contextMenu.Size = new Size(123, 76);
+            contextMenu.Size = new Size(108, 70);
             // 
             // toolStripMenuItem1
             // 
             toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(122, 24);
+            toolStripMenuItem1.Size = new Size(107, 22);
             toolStripMenuItem1.Text = "Pin";
             toolStripMenuItem1.Click += toolStripMenuItem1_Click;
             // 
             // toolStripMenuItem2
             // 
             toolStripMenuItem2.Name = "toolStripMenuItem2";
-            toolStripMenuItem2.Size = new Size(122, 24);
+            toolStripMenuItem2.Size = new Size(107, 22);
             toolStripMenuItem2.Text = "Copy";
             // 
             // toolStripMenuItem3
             // 
             toolStripMenuItem3.Name = "toolStripMenuItem3";
-            toolStripMenuItem3.Size = new Size(122, 24);
+            toolStripMenuItem3.Size = new Size(107, 22);
             toolStripMenuItem3.Text = "Delete";
             // 
             // imageList1
@@ -105,18 +107,22 @@
             // 
             // button1
             // 
-            button1.Location = new Point(480, 12);
+            button1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            button1.Location = new Point(420, 9);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(29, 29);
+            button1.Size = new Size(25, 22);
             button1.TabIndex = 1;
             button1.Text = "button1";
             button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            button2.Location = new Point(445, 12);
+            button2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            button2.Location = new Point(389, 9);
+            button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
-            button2.Size = new Size(29, 29);
+            button2.Size = new Size(25, 22);
             button2.TabIndex = 2;
             button2.Text = "button2";
             button2.UseVisualStyleBackColor = true;
@@ -124,12 +130,14 @@
             // 
             // logListBox
             // 
+            logListBox.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             logListBox.Font = new Font("Lucida Console", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 204);
             logListBox.FormattingEnabled = true;
-            logListBox.ItemHeight = 13;
-            logListBox.Location = new Point(12, 689);
+            logListBox.ItemHeight = 10;
+            logListBox.Location = new Point(10, 517);
+            logListBox.Margin = new Padding(3, 2, 3, 2);
             logListBox.Name = "logListBox";
-            logListBox.Size = new Size(497, 147);
+            logListBox.Size = new Size(435, 104);
             logListBox.TabIndex = 3;
             // 
             // clipboardTimer
@@ -139,13 +147,14 @@
             // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(522, 858);
+            ClientSize = new Size(457, 644);
             Controls.Add(logListBox);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(clipboardListView);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "MainForm";
             Text = "Clipboard";
             TopMost = true;
