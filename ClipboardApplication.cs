@@ -9,7 +9,7 @@ namespace ClipboardHistory
     public class ClipboardApplication
     {
         public string title = "Clipboard History";
-        public string version = "0.1";
+        public string version = "0.1 *DEV*";
         public Logger logger = new Logger();
         public ClipboardMonitor monitor;
         public ClipboardList list;
