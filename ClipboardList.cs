@@ -20,13 +20,17 @@ namespace ClipboardHistory
 
         public void Add(string data, bool pined)
         {
-            if (pined)
-            {
-                list.Add(new ClipboardData(data, pined));
-                pinedCount++;
-            } else
-            {
-                list.Insert(pinedCount, new ClipboardData(data, pined));
+            try {
+                if (pined)
+                {
+                    list.Add(new ClipboardData(data, pined));
+                    pinedCount++;
+                } else
+                {
+                    list.Insert(pinedCount, new ClipboardData(data, pined));
+                }
+            } catch {
+
             }
             
         }
@@ -46,11 +50,6 @@ namespace ClipboardHistory
             System.IO.File.WriteAllText(directoryPath + "\\" + index.ToString() + ".txt", list[index].data);
         }
 
-        public void loadDataFromFile(string filename)
-        {
-
-        }
-
         public void loadData()
         {
             string directoryPath = ".\\data";
@@ -60,6 +59,17 @@ namespace ClipboardHistory
                 string data = System.IO.File.ReadAllText(file);
                 this.Add(data, true);
             }
+        }
+
+        public bool checkData(string data) {
+            bool result = false;
+            foreach (ClipboardData clipboardData in list) {
+                if (data == clipboardData.data) {
+                    result = true;
+                    return result;
+                }
+            }
+            return result;
         }
     }
 }

@@ -29,7 +29,9 @@ namespace ClipboardHistory
             if (data != previousData)
             {
                 previousData = data;
-                this.onClipboardChange(data);
+                if (!application.list.checkData(data)) {
+                    this.onClipboardChange(data);
+                }
             }
         }
     }
