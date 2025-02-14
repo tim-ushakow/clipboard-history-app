@@ -30,7 +30,7 @@ namespace ClipboardHistory
                     list.Insert(pinedCount, new ClipboardData(data, pined));
                 }
             } catch {
-
+                MessageBox.Show("Error: " + data);
             }
             
         }

@@ -14,6 +14,14 @@ namespace ClipboardHistory
             this.application.setLoggerListBox(logListBox);
 
             clipboardTimer.Tick += this.application.onClipboardTimer;
+
+            this.application.updateList();
+
+            if (!application.debug)
+            {
+                logListBox.Visible = false;
+                clipboardListView.Height = this.Height - 110;
+            }
         }
 
         public void setClipboardApplication(ClipboardApplication application)
@@ -33,19 +41,25 @@ namespace ClipboardHistory
             {
                 ListViewItem item = new ListViewItem(data.title);
                 item.SubItems.Add(data.time);
-                item.ImageIndex = data.pined?0:2;
+                item.ImageIndex = data.pined ? 0 : 2;
                 clipboardListView.Items.Add(item);
             }
         }
 
-        private void clipboardListView_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void copyCommand()
         {
             this.application.Log("onDoubleClick()");
             if (clipboardListView.SelectedItems.Count > 0)
             {
                 ListViewItem item = clipboardListView.SelectedItems[0];
                 this.application.list.copyToClipboard(item.Index);
+                this.WindowState = FormWindowState.Minimized;
             }
+        }
+
+        private void clipboardListView_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            copyCommand();
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -56,5 +70,11 @@ namespace ClipboardHistory
                 this.application.pinItem(item.Index);
             }
         }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            copyCommand();
+        }
     }
 }
+
